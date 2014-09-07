@@ -24,12 +24,10 @@ Values to be replaced should be book ended with %%.
   ```JS
   var replace = require('replace-temp-values');
   
-  replace('myFile.txt', 'Heading', 'Good Morning San Diego!');
+  var values = {'Heading': 'Good Morning San Diego!', 'Footer': 'Yaz Flute'};
   
-  or with corresponding arrays
-  
-  replace('myFile.txt', ['Heading', 'Footer'], ['Good Morning San Diego!', 'Yaz Flute']);
+  replace('myFile.txt', values);
   ```
   
 
-* 0.1.3
+* 0.1.3.1

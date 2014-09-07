@@ -3,39 +3,44 @@ var fs = require('fs');
 /**
  * @name Replace Temp Values
  * @param file the path the file
- * @param orig the template values to be replace (they are automatically wrapped in % %)
- * @param rplcmt the values to be replaced with
+ * @param values object with the variable to be replaced and its replacement
  * @param callback
  */
-module.exports = function(file, orig, rplcmt, callback)
+module.exports = function(file, values, callback)
 {
+  var marker = '%',
+    regex;
 
   //Read file
   fs.readFile(file, function(err, data)
   {
     if(err) { return err; }
 
-    var replaced = data,
-      regex;
+    var replaced = data.toString();
 
-    // check to see if the source is an array
-    if(!Array.isArray(orig))
-    {
-      regex = new RegExp('%' + orig + '%', 'g');
 
-      // replace the values
-      replaced = replaced.toString().replace(regex, rplcmt);
-
-    }
-    else
+    for(var key in values)
     {
 
-      // Loop through all of the values
-      for(var i = 0, len = orig.length; i < len; i++)
+      if(values.hasOwnProperty(key))
       {
-        regex = new RegExp('%' + orig[i] + '%', 'g');
 
-        replaced = replaced.toString().replace(regex, rplcmt[i]);
+        regex = new RegExp(marker + key + marker, 'g');
+
+        var contains = replaced.indexOf(marker + key + marker);
+
+        if(contains > -1)
+        {
+
+          replaced = replaced.replace(regex, values[key]);
+
+        }
+        else
+        {
+
+          console.log('Template Value ' + key + ' is not found');
+
+        }
 
       }
 
