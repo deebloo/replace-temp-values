@@ -10,7 +10,18 @@ Values to be replaced should be book ended with %%.
   npm install replace-temp-values --save
 
 ## Usage
-
+  myFile.txt
+  ```
+  %Heading%
+  
+  Welcome to this months newsletter
+  ...
+  
+  %Footer%
+  ```
+    
+  app.js
+  ```JS
   var replace = require('replace-temp-values');
   
   replace('myFile.txt', 'Heading', 'Good Morning San Diego!');
@@ -18,6 +29,7 @@ Values to be replaced should be book ended with %%.
   or with corresponding arrays
   
   replace('myFile.txt', ['Heading', 'Footer'], ['Good Morning San Diego!', 'Yaz Flute']);
+  ```
   
 
 * 0.1.0 Initial release
