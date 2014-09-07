@@ -15,14 +15,16 @@ module.exports = function(file, orig, rplcmt, callback)
   {
     if(err) { return err; }
 
-    var replaced = data;
+    var replaced = data,
+        regex;
 
     // check to see if the source is an array
     if(!Array.isArray(orig))
     {
+      regex = new RegExp('%' + orig + '%', 'g');
 
       // replace the values
-      replaced = replaced.toString().replace('%' + orig + '%', rplcmt);
+      replaced = replaced.toString().replace(regex, rplcmt);
 
     }
     else
@@ -31,8 +33,9 @@ module.exports = function(file, orig, rplcmt, callback)
       // Loop through all of the values
       for(var i = 0, len = orig.length; i < len; i++)
       {
+        regex = new RegExp('%' + orig[i] + '%', 'g');
 
-        replaced = replaced.toString().replace('%' + orig[i] + '%', rplcmt[i]);
+        replaced = replaced.toString().replace('%' + regex[i] + '%', rplcmt[i]);
 
       }
 

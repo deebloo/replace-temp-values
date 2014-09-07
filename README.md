@@ -32,4 +32,4 @@ Values to be replaced should be book ended with %%.
   ```
   
 
-* 0.1.0 Initial release
+* 0.1.2
