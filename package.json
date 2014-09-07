@@ -1,0 +1,26 @@
+{
+  "name": "replace-temp-values",
+  "version": "0.0.0",
+  "description": "Replace marked template values in file",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/DannyBlueDesign/replace-temp-values.git"
+  },
+  "keywords": [
+    "read",
+    "write",
+    "template",
+    "replace",
+    "values"
+  ],
+  "author": "Danny Blue <dannybluedesign@gmail.com> (http://dannybluedesign.com/)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DannyBlueDesign/replace-temp-values/issues"
+  },
+  "homepage": "https://github.com/DannyBlueDesign/replace-temp-values"
+}
