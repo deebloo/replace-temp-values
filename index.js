@@ -16,7 +16,7 @@ module.exports = function(file, orig, rplcmt, callback)
     if(err) { return err; }
 
     var replaced = data,
-        regex;
+      regex;
 
     // check to see if the source is an array
     if(!Array.isArray(orig))
@@ -35,7 +35,7 @@ module.exports = function(file, orig, rplcmt, callback)
       {
         regex = new RegExp('%' + orig[i] + '%', 'g');
 
-        replaced = replaced.toString().replace('%' + regex[i] + '%', rplcmt[i]);
+        replaced = replaced.toString().replace(regex, rplcmt[i]);
 
       }
 

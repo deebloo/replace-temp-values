@@ -1,6 +1,6 @@
 {
   "name": "replace-temp-values",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Replace marked template values in file",
   "main": "index.js",
   "scripts": {
