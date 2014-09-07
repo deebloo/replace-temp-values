@@ -6,12 +6,13 @@ A tiny module for replacing template values in a file.
 Values to be replaced should be book ended with %%.
 
 ## Installation
-
+  ```TXT
   npm install replace-temp-values --save
+  ```
 
 ## Usage
   myFile.txt
-  ```
+  ```TXT
   %Heading%
   
   Welcome to this months newsletter
@@ -26,8 +27,8 @@ Values to be replaced should be book ended with %%.
   
   var values = {'Heading': 'Good Morning San Diego!', 'Footer': 'Yaz Flute'};
   
-  replace('myFile.txt', values);
+  replace('myFile.txt', 'newFile.txt', values);
   ```
   
 
-* 0.1.4
+* 0.1.5
