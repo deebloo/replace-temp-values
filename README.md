@@ -1,9 +1,11 @@
+I reccomend using the more generic [find-and-replace](https://github.com/DannyBlueDesign/find-and-replace) instead
 Replace Template Values
 =========
 
 A tiny module for replacing template values in a file.
 
 Values to be replaced should be book ended with %%.
+
 
 ## Installation
   ```TXT
